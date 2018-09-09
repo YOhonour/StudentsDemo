@@ -17,7 +17,7 @@ public class AdministratorDao {
     }
     public boolean isAdministrator(String admiName,String psw){
         boolean flag = false;
-        String sql = "SELECT * FROM `adm` WHERE `adm`.`admname` = "+ admiName;
+        String sql = "SELECT * FROM `adm` WHERE `adm`.`admname` = "+ "'" + admiName+ "'";
         try (Connection c = DBUtil.getConnection(); Statement st = c.createStatement()) {
 
             ResultSet rs = st.executeQuery(sql);
