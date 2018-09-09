@@ -123,7 +123,7 @@ public class StudentDao {
 
         Student student = new Student();
 
-        String sql = "SELECT * FROM `student` WHERE `student`.`name` = " + name;
+        String sql = "SELECT * FROM `student` WHERE `student`.`name` = " +"'" +name + "'";
         try (Connection c = DBUtil.getConnection(); Statement st = c.createStatement()){
 
             ResultSet rs = st.executeQuery(sql);
